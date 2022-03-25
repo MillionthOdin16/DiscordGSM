@@ -22,7 +22,6 @@ app.use('/', (_, res) => {
     // Render in ejs
     res.render(path.join(__dirname, '/public/index.ejs'), { 
         version: version,
-        inviteLink: inviteLink,
         SERVERS_JSON: JsonValid ? '✔️' : '❌',
     })
 })
