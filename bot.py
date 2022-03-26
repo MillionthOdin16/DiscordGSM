@@ -250,7 +250,7 @@ class DiscordGSM():
                 else data["password"] if type(self.get_value(data, "password")) == bool 
                 else False)
 
-            title = self.get_value(server, "title") or self.get_value(server, "hostname") or self.get_value(data, "game")
+            title = self.get_value(server, "hostname") or self.get_value(server, "title") or self.get_value(data, "game")
             title = f':lock: {title}' if lock else  f':unlock: {title}'
             
             description = self.get_value(server, "custom")
@@ -280,7 +280,7 @@ class DiscordGSM():
 
             embed.add_field(name=FIELD_STATUS, value=status, inline=True)
             #embed.add_field(name=FIELD_NAME, value=hostname, inline=True)
-            embed.add_field(name=SPACER, value=SPACER, inline=True)
+            #embed.add_field(name=SPACER, value=SPACER, inline=True)
             embed.add_field(name=FIELD_PLAYERS, value=players_string, inline=True)
             embed.add_field(name=FIELD_ADDRESS, value=f'`{address}`', inline=True)
     
@@ -295,8 +295,8 @@ class DiscordGSM():
                 embed.add_field(name=SPACER, value=SPACER, inline=True)
             if map:
                 embed.add_field(name=FIELD_CURRENTMAP, value=map, inline=True)
-            if map or country:
-                embed.add_field(name=SPACER, value=SPACER, inline=True)
+            #if map or country:
+                #embed.add_field(name=SPACER, value=SPACER, inline=True)
 
             if steam_id:
                 if direct_join:
