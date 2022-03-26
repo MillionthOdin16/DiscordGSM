@@ -283,11 +283,6 @@ class DiscordGSM():
             #embed.add_field(name=SPACER, value=SPACER, inline=True)
             embed.add_field(name=FIELD_PLAYERS, value=players_string, inline=True)
             embed.add_field(name=FIELD_ADDRESS, value=f'`{address}`', inline=True)
-    
-            if password is None:
-                embed.add_field(name=SPACER, value=SPACER, inline=True)
-            else:
-                embed.add_field(name=FIELD_PASSWORD, value=f'`{password}`', inline=True)
 
             if country:
                 embed.add_field(name=FIELD_COUNTRY, value=f':flag_{country.lower()}:', inline=True)
@@ -298,6 +293,11 @@ class DiscordGSM():
             #if map or country:
                 #embed.add_field(name=SPACER, value=SPACER, inline=True)
 
+            if password is None:
+                embed.add_field(name=SPACER, value=SPACER, inline=True)
+            else:
+                embed.add_field(name=FIELD_PASSWORD, value=f'`{password}`', inline=True)
+                
             if steam_id:
                 if direct_join:
                     if password:
